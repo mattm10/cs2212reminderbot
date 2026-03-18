@@ -20,7 +20,7 @@ async def send_message():
 
 @client.command()
 async def test(ctx):
-    await send_message()
+    await ctx.send("hello")
 
 @client.event
 async def on_ready():
