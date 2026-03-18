@@ -18,6 +18,10 @@ async def send_message():
     channel = client.get_channel(1483666728151158907)
     await channel.send("@everyone TA MEETING AT 4:40")
 
+@client.command()
+async def test(ctx):
+    await send_message()
+
 @client.event
 async def on_ready():
     print('READY')
