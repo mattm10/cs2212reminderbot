@@ -3,6 +3,7 @@ from discord.ext import commands
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from datetime import datetime
+import os
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -26,7 +27,5 @@ async def on_ready():
     )
     scheduler.start()
 
-with open('token.txt', 'r') as f:
-    token = f.read().strip()
-
+token = os.getenv('DISCORD_TOKEN')
 client.run(token)
